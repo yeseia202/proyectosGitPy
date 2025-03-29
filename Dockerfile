@@ -5,8 +5,12 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Instala dependencias del sistema necesarias para compilar paquetes Python y Git
-RUN apt-get update && apt-get install -y --no-install-recommends gcc libffi-dev libssl-dev git && \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc libffi-dev libssl-dev git && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Configura GitPython para que use el ejecutable de Git
+ENV GIT_PYTHON_REFRESH=quiet
 
 # Copia los archivos necesarios al contenedor
 COPY . /app

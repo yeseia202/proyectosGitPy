@@ -4,6 +4,9 @@ import git
 import argparse
 from treelib import Node, Tree
 
+# Configura explícitamente el ejecutable de Git si no está en el PATH
+git.Git.refresh(path="/usr/bin/git")  # Cambia la ruta si es necesario
+
 # Existing functions (not shown here for brevity)
 
 def parse_arguments():
