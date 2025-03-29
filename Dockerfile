@@ -1,11 +1,12 @@
-# Usa una imagen base de Python Alpine
-FROM python:3.9-alpine
+# Usa una imagen base de Python Slim
+FROM python:3.9-slim
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Instala dependencias del sistema necesarias para compilar paquetes Python
-RUN apk add --no-cache gcc musl-dev libffi-dev openssl-dev
+# Instala dependencias del sistema necesarias para compilar paquetes Python y Git
+RUN apt-get update && apt-get install -y --no-install-recommends gcc libffi-dev libssl-dev git && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Copia los archivos necesarios al contenedor
 COPY . /app
