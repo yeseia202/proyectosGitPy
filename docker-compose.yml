@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "0:5000"  # Asigna automáticamente un puerto del host al puerto 5000 del contenedor
+      - "${PORT}:5000"  # Usa la variable de entorno PORT para asignar el puerto dinámicamente
     volumes:
       - .:/app
     environment:
