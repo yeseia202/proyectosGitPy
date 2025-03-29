@@ -1,6 +1,6 @@
 flask
 flasgger
 treelib
-gitpython
+GitPython
 PyJWT
 python-dotenv
