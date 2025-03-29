@@ -1,0 +1,4 @@
+flask
+flasgger
+treelib
+gitpython
