@@ -1,3 +1,8 @@
+# filepath: /Users/hexome/Documents/GitHub/proyectosGitPy/app.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# Hexome Systems
+
 import os
 import jwt
 from flask import Flask, request, jsonify
@@ -6,8 +11,6 @@ from flasgger.utils import swag_from
 from dotenv import load_dotenv
 from lib import get_directory_structure, create_directories, initialize_git_repository
 
-# filepath: /Users/hexome/Documents/GitHub/proyectosGitPy/app.py
-#!/usr/bin/env python3
 
 # Cargar variables de entorno
 load_dotenv()
